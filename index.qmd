@@ -2,11 +2,11 @@
 title: "Cassidy Thorpe"
 about: 
   template: jolla
+  image: images/profile.JPG
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+My name is Cassidy Thorpe and I am a UCSB student majoring in Environmental Studies
+.
 
 ```{r}
 1 + 1

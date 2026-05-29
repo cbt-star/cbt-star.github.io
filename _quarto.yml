@@ -1,5 +1,6 @@
-project:
+quaproject:
   type: website
+  output-dir: docs
 
 website:
   title: "cbt-star.github.io"

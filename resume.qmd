@@ -1,5 +1,10 @@
 ---
 title: "Resume"
-format: html
 ---
+
+Below is an embedded view of my resume. You can also download a copy directly using the link below.
+
+[📥 Download Resume PDF](images/resume-fall-2025.pdf)
+
+<iframe src="images/resume-fall-2025.pdf" width="100%" height="800px"></iframe>
 

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "images/*.pdf"
 
 website:
   title: "cbt-star.github.io"

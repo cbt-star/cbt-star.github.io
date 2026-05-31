@@ -1,7 +1,0 @@
----
-title: "Projects Blog"
-listing:
-  contents: projects
-  type: grid
----
-

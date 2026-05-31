@@ -1,12 +1,15 @@
 ---
 title: "Cassidy Thorpe"
+toc: false
 about: 
   template: jolla
   image: images/profile.JPG
+  links: 
+    - icon: envelope
+      href: mailto:c_b_t@ucsb.edu
 ---
 
-My name is Cassidy Thorpe and I am a UCSB student majoring in Environmental Studies
-.
+My name is Cassidy Thorpe and I am a UCSB student majoring in Environmental Studies.
 
 ```{r}
 1 + 1

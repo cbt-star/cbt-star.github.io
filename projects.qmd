@@ -1,5 +1,10 @@
 ---
 title: "Projects"
-format: html
+listing:
+  contents: projectsblog # Matches your folder name exactly
+  type: grid             # Dislays them as clean cards
+  sort: "date desc"      
+  categories: true       
 ---
 
+Welcome to my projects! Explore some of my work below.

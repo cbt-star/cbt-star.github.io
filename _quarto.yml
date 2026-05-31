@@ -12,7 +12,6 @@ website:
       - projects.qmd
       - ecr.qmd
       - resume.qmd
-
 format:
   html:
     theme:

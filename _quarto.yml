@@ -5,7 +5,7 @@ project:
     - "images/*.pdf"
 
 website:
-  title: "cbt-star.github.io"
+  title: "Cassidy Thorpe"
   navbar:
     left:
       - href: index.qmd
@@ -16,6 +16,7 @@ website:
       - resume.qmd
 format:
   html:
+    lightbox: true
     theme:
       - journal
       - brand

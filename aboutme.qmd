@@ -7,12 +7,25 @@ format: html
 
 I’m from Humboldt county California and I don’t think I’ll ever recover from growing up in such a beautiful place with the tallest trees, a rugged coastline, the six rivers, and all the love and support in the world. I grew up learning Spanish in school, filling my free time with whatever sport was in season, and spending weekends with my parents exploring the northern part of the state
 
-::: {layout-nw="[[1,1], [1,1]]" class="gallery-grid"}
-![Me and my dad planting our apple tree in the backyard](images/apple-tree.jpeg){group="ranch-gallery"}
-![Me guiding a boat down Hell's Hole rapid on the Trinity river](images/guiding.jpg){group="ranch-gallery"}
-![Me hugging a tree close to my home in Humboldt county](images/tree-hug.jpg){group="ranch-gallery"}
-![Me rowing aboat down the Rouge river](images/boating.jpg){group="ranch-gallery"}
+::: {layout-ncol=2}
+
+::: {.lightbox group="ranch-gallery"}
+![Me and my dad planting our apple tree in the backyard](images/apple-tree.jpeg)
 :::
+
+:::{.lightbox group="ranch-gallery"}
+![Me guiding a boat down Hell's Hole rapid on the Trinity river](images/guiding.jpg){group="ranch-gallery"}
+:::
+
+::: {.lightbox group="ranch-gallery"}
+![Me hugging a tree close to my home in Humboldt county](images/tree-hug.jpg){group="ranch-gallery"}
+:::
+
+::: {.lightbox group="ranch-gallery"}
+![Me rowing a boat down the Rouge river](images/boating.jpg){group="ranch-gallery"}
+:::
+
+::: 
 
 # Agriculture
 

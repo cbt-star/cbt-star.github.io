@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About Me – cbt-star.github.io</title>
+<title>About Me – Cassidy Thorpe</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-d390f6b1bb233dafbd59a397b5af9ca7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">cbt-star.github.io</span>
+    <span class="navbar-title">Cassidy Thorpe</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -158,13 +161,51 @@ ul.task-list li input[type="checkbox"] {
 <section id="background" class="level1">
 <h1>Background</h1>
 <p>I’m from Humboldt county California and I don’t think I’ll ever recover from growing up in such a beautiful place with the tallest trees, a rugged coastline, the six rivers, and all the love and support in the world. I grew up learning Spanish in school, filling my free time with whatever sport was in season, and spending weekends with my parents exploring the northern part of the state</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="lightbox quarto-layout-cell" data-group="ranch-gallery" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/apple-tree.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Me and my dad planting our apple tree in the backyard"><img src="images/apple-tree.jpeg" class="img-fluid figure-img" alt="Me and my dad planting our apple tree in the backyard"></a></p>
+<figcaption>Me and my dad planting our apple tree in the backyard</figcaption>
+</figure>
+</div>
+</div>
+<div class="lightbox quarto-layout-cell" data-group="ranch-gallery" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/guiding.jpg" class="lightbox" data-gallery="ranch-gallery" title="Me guiding a boat down Hell’s Hole rapid on the Trinity river"><img src="images/guiding.jpg" class="img-fluid figure-img" alt="Me guiding a boat down Hell’s Hole rapid on the Trinity river"></a></p>
+<figcaption>Me guiding a boat down Hell’s Hole rapid on the Trinity river</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="lightbox quarto-layout-cell" data-group="ranch-gallery" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/tree-hug.jpg" class="lightbox" data-gallery="ranch-gallery" title="Me hugging a tree close to my home in Humboldt county"><img src="images/tree-hug.jpg" class="img-fluid figure-img" alt="Me hugging a tree close to my home in Humboldt county"></a></p>
+<figcaption>Me hugging a tree close to my home in Humboldt county</figcaption>
+</figure>
+</div>
+</div>
+<div class="lightbox quarto-layout-cell" data-group="ranch-gallery" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/boating.jpg" class="lightbox" data-gallery="ranch-gallery" title="Me rowing a boat down the Rouge river"><img src="images/boating.jpg" class="img-fluid figure-img" alt="Me rowing a boat down the Rouge river"></a></p>
+<figcaption>Me rowing a boat down the Rouge river</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="agriculture" class="level1">
 <h1>Agriculture</h1>
 <p>After my first year of college, I was completely lost. I had effectively plucked myself out of the beautiful bubble I used to call home and moved myself somewhere where everything was different - the weather, the food, the people, and even the Pacific ocean had a whole new feel in Santa Barbara. The year away from home had changed my ideas about what I wanted to pursue personally, academically, and career wise. But after returning home to my familiar corner of the state, I discovered something new that helped start on another track - I love agriculture! On a small organic farm, under the hot summer sun, I found what I have come to think of as my “ikigai” - the intersection of what I love, what I am good at, what the world needs, and what I can be paid for (at least a little).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="farm-work.jpg" class="img-fluid figure-img"></p>
+<p><a href="images/farm-work.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Me with my coworkers at Willow Creek Farms"><img src="images/farm-work.jpg" class="img-fluid figure-img" alt="Me with my coworkers at Willow Creek Farms"></a></p>
 <figcaption>Me with my coworkers at Willow Creek Farms</figcaption>
 </figure>
 </div>
@@ -574,6 +615,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

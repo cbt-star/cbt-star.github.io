@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-d390f6b1bb233dafbd59a397b5af9ca7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -171,21 +174,21 @@ ul.task-list li input[type="checkbox"] {
 <p>At the ranch we experimented with sowing buckwheat as a warm weather cover crop in a few of our rows. These rows had previously been completely covered in bermuda grass, a nasty rhizomous grass that quickly takes over space that we’d rather use for planting vegetables. It took our team of about 6 interns the better part of the winter to clear out the weeds and remediate the soil. On April 28th we densley sowed the buckwheat seed in each of the rows. By May 4th, this is what it looked like:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="may-4-buckwheat.JPG" class="img-fluid figure-img"></p>
+<p><a href="may-4-buckwheat.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Buckwheat germination 6 days after sowing"><img src="may-4-buckwheat.JPG" class="img-fluid figure-img" alt="Buckwheat germination 6 days after sowing"></a></p>
 <figcaption>Buckwheat germination 6 days after sowing</figcaption>
 </figure>
 </div>
 <p>The buckwheat grew really nicely and so far seems to be a great success. It is kind of hard to tell because we intentionally planted the seeds so densely but the hope is that the buckwheat has been able to out compete the bermuda grass. The main reason I wanted to try buckwheat as a cover crop is that it germinates quickly which allows it to suppress competing weeds by shading out weeds and taking up space.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="cover-crop.JPG" class="img-fluid figure-img"></p>
+<p><a href="cover-crop.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="BUckwheat can grow tall quickly and compete with noxious weeds"><img src="cover-crop.JPG" class="img-fluid figure-img" alt="BUckwheat can grow tall quickly and compete with noxious weeds"></a></p>
 <figcaption>BUckwheat can grow tall quickly and compete with noxious weeds</figcaption>
 </figure>
 </div>
 <p>Other benefits include adding organic matter to soil quickly, improving soil structure, scavenging phosphorous and attracting pollinators.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="buckwheat-upclose.JPG" class="img-fluid figure-img"></p>
+<p><a href="buckwheat-upclose.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Buckwheat starting to show it’s white flowers"><img src="buckwheat-upclose.JPG" class="img-fluid figure-img" alt="Buckwheat starting to show it’s white flowers"></a></p>
 <figcaption>Buckwheat starting to show it’s white flowers</figcaption>
 </figure>
 </div>
@@ -595,6 +598,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

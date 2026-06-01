@@ -6,7 +6,10 @@ about:
   image: images/profile.JPG
   links: 
     - icon: envelope
+      text: Email
       href: mailto:c_b_t@ucsb.edu
+    - icon: github
+      text: GitHub
 ---
 
 My name is Cassidy Thorpe and I am a UCSB student majoring in Environmental Studies.

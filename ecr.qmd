@@ -3,3 +3,35 @@ title: "Ellwood Canyon Ranch"
 format: html
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+
+# 1. Paste your published "Map Data" CSV link here
+sheet_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRQyyi-2Q3gxQikQDZqdzLAaamvRB4iILP3CLFdYiOIShpZ97p3eymEeTmxvs_XLqAXPff7Fj2lIoQ/pub?gid=1300473115&single=true&output=csv"
+ranch_data <- read_csv(sheet_url)
+
+# 2. Format the interactive popup windows
+ranch_data <- ranch_data %>% 
+  mutate(popup_content = paste0(
+    "<div style='font-family: Arial, sans-serif; max-width: 220px;'>",
+    "<h4 style='margin: 0 0 5px 0; color: #2E5A27;'>", title, "</h4>",
+    "<p style='font-size: 13px; margin: 0 0 8px 0; line-height: 1.4;'>", description, "</p>",
+    "<img src='", image, "' style='width: 100%; border-radius: 4px;'>",
+    "</div>"
+  ))
+
+# 3. Build and center the map
+leaflet(data = ranch_data) %>%
+  addProviderTiles(providers$USGS.USImageryTopo) %>% # Satellite + Topo lines combo
+  addMarkers(
+    lng = ~lng, 
+    lat = ~lat, 
+    popup = ~popup_content, 
+    label = ~title
+  )
+```

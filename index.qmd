@@ -14,6 +14,4 @@ about:
 
 My name is Cassidy Thorpe and I am a UCSB student majoring in Environmental Studies.
 
-```{r}
-1 + 1
-```
+

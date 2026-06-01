@@ -13,15 +13,14 @@ website:
       - aboutme.qmd
       - projects.qmd
       - ecr.qmd
-      - resume.qmd
 format:
   html:
     lightbox: true
     theme:
       - journal
-      - brand
-    css: styles.css
+      - styles.scss
     toc: true
+    
 
 
 

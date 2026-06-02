@@ -3,6 +3,9 @@ title: "Ellwood Canyon Ranch"
 format: html
 ---
 
+Here is an interactive map that shows the most important parts of the ranch.
+
+
 ```{r}
 #| echo: false
 #| message: false

@@ -20,6 +20,7 @@ format:
     theme:
       - journal
       - styles.scss
+    page-layout: full
     toc: true
     
 

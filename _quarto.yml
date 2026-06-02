@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - "images/*.pdf"
+    - "images/"
 
 website:
   title: "Cassidy Thorpe"

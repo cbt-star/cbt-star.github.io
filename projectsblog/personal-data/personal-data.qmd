@@ -8,14 +8,19 @@ Here is a sample of some code I wrote for a personal data project that I did. I 
 First, my packages:
 
 ![Code chunk to load in my packages](Screenshot 2026-06-02 102333.png)
+
 Then, I organized my data:
 
 ![I cleaned my data](Screenshot 2026-06-02 102618.png)
 ![&nbsp](Screenshot 2026-06-02 102627.png)
 
-And made a visualization
+And made a visualization:
 
+![&nbsp](Screenshot 2026-06-02 103544.png)
 
+![&nbsp](Screenshot 2026-06-02 103556.png)
+
+Here is what the plot lookede like 
 
 
 

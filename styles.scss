@@ -20,3 +20,20 @@ $body-color: $forest-green; // page text
 $footer-bg: $cream; // footer 
 $link-color: $purple; // hyperlinks 
 
+/*-- scss:rules --*/
+// Force gallery previews into uniform, square-ish cropped boxes
+.lightbox img {
+  width: 100%;
+  height: 250px;       // Forces every preview image to be the exact same height
+  object-fit: cover;   // Smart crops the photo center so it doesn't look squished!
+  object-position: center; 
+  border: 2px solid $dark-green;
+  border-radius: 4px;
+  transition: transform 0.2s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.02);
+    border-color: $purple;
+  }
+}
+

@@ -3,9 +3,9 @@ title: "About Me"
 format: html
 ---
 
-# Background
+## Background
 
-I’m from Humboldt county California and I don’t think I’ll ever recover from growing up in such a beautiful place with the tallest trees, a rugged coastline, the six rivers, and all the love and support in the world. I grew up learning Spanish in school, filling my free time with whatever sport was in season, and spending weekends with my parents exploring the northern part of the state
+I’m from Humboldt county California and I don’t think I’ll ever recover from growing up in such a beautiful place with the tallest trees, a rugged coastline, the six rivers, and all the love and support in the world. I grew up learning Spanish in school, filling my free time with whatever sport was in season, and spending weekends with my parents exploring the northern part of the state. 
 
 ::: {layout-ncol=2}
 
@@ -18,20 +18,19 @@ I’m from Humboldt county California and I don’t think I’ll ever recover fr
 :::
 
 ::: {.lightbox group="ranch-gallery"}
-![Me hugging a tree close to my home in Humboldt county](images/tree-hug.jpg){group="ranch-gallery"}
+![Me hugging a tree close to my home](images/tree-hug.jpg){group="ranch-gallery"}
 :::
 
 ::: {.lightbox group="ranch-gallery"}
-![Me rowing a boat down the Rouge river](images/boating.jpg){group="ranch-gallery"}
+![Me rowing a boat down the Rogue river](images/boating.jpg){group="ranch-gallery"}
 :::
 
 ::: 
 
-# Agriculture
+## Agriculture
 
 After my first year of college, I was completely lost. I had effectively plucked myself out of the beautiful bubble I used to call home and moved myself somewhere where everything was different - the weather, the food, the people, and even the Pacific ocean had a whole new feel in Santa Barbara. The year away from home had changed my ideas about what I wanted to pursue personally, academically, and career wise. But after returning home to my familiar corner of the state, I discovered something new that helped start on another track - I love agriculture! On a small organic farm, under the hot summer sun, I found what I have come to think of as my “ikigai” - the intersection of what I love, what I am good at, what the world needs, and what I can be paid for (at least a little).
 
 ![Me with my coworkers at Willow Creek Farms](images/farm-work.jpg)
-
 
 

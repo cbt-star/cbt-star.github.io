@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-8917d667d5a64cbf4fa7102b50343304.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,9 +148,28 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Here is a sample of some code I wrote for a personal data project that I did. I collected data on the number of eggs I ate in a day along with data from other variables such as whether or not I had school and how many servings of meat I ate.</p>
 <p>First, my packages:</p>
-<p><img src="Screenshot 2026-06-02 102333.png" class="img-fluid" alt="Code chunk to load in my packages"> Then, I organized my data:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="Screenshot 2026-06-02 102333.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Code chunk to load in my packages"><img src="Screenshot 2026-06-02 102333.png" class="img-fluid figure-img" alt="Code chunk to load in my packages"></a></p>
+<figcaption>Code chunk to load in my packages</figcaption>
+</figure>
+</div>
+<p>Then, I organized my data:</p>
 <p><img src="Screenshot 2026-06-02 102618.png" class="img-fluid" alt="I cleaned my data"> <img src="Screenshot 2026-06-02 102627.png" class="img-fluid" alt="&amp;nbsp"></p>
-<p>And made a visualization</p>
+<p>And made a visualization:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="Screenshot 2026-06-02 103544.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="&amp;nbsp"><img src="Screenshot 2026-06-02 103544.png" class="img-fluid figure-img" alt="&amp;nbsp"></a></p>
+<figcaption>&amp;nbsp</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="Screenshot 2026-06-02 103556.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="&amp;nbsp"><img src="Screenshot 2026-06-02 103556.png" class="img-fluid figure-img" alt="&amp;nbsp"></a></p>
+<figcaption>&amp;nbsp</figcaption>
+</figure>
+</div>
+<p>Here is what the plot lookede like</p>
 
 
 
@@ -553,6 +575,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

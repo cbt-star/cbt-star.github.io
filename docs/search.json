@@ -67,6 +67,6 @@
     "href": "projectsblog/personal-data/personal-data.html",
     "title": "Eggs",
     "section": "",
-    "text": "Here is a sample of some code I wrote for a personal data project that I did. I collected data on the number of eggs I ate in a day along with data from other variables such as whether or not I had school and how many servings of meat I ate.\nFirst, my packages:\n Then, I organized my data:\n \nAnd made a visualization"
+    "text": "Here is a sample of some code I wrote for a personal data project that I did. I collected data on the number of eggs I ate in a day along with data from other variables such as whether or not I had school and how many servings of meat I ate.\nFirst, my packages:\n\n\n\nCode chunk to load in my packages\n\n\nThen, I organized my data:\n \nAnd made a visualization:\n\n\n\n&nbsp\n\n\n\n\n\n&nbsp\n\n\nHere is what the plot lookede like"
   }
 ]

@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -148,28 +183,64 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Here is a sample of some code I wrote for a personal data project that I did. I collected data on the number of eggs I ate in a day along with data from other variables such as whether or not I had school and how many servings of meat I ate.</p>
 <p>First, my packages:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="Screenshot 2026-06-02 102333.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Code chunk to load in my packages"><img src="Screenshot 2026-06-02 102333.png" class="img-fluid figure-img" alt="Code chunk to load in my packages"></a></p>
-<figcaption>Code chunk to load in my packages</figcaption>
-</figure>
-</div>
+<p>Here is a sample of some code I wrote for a personal data project. First, my packages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code chunk to load in my packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then, I organized my data:</p>
-<p><img src="Screenshot 2026-06-02 102618.png" class="img-fluid" alt="I cleaned my data"> <img src="Screenshot 2026-06-02 102627.png" class="img-fluid" alt="&amp;nbsp"></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create new object from egg_data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>egg_data_clean <span class="ot">&lt;-</span> egg_data <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># clean names</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove any row where all values are NA</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">remove_empty</span>(<span class="at">which =</span> <span class="st">"rows"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the empty (1st) column that was all NA</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># change names from 1, 2, 3, etc.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set_names</span>(<span class="st">"date"</span>, <span class="st">"number_eggs_eaten"</span>, <span class="st">"servings_yogurt_eaten"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">"breakfast_at_school"</span>, <span class="st">"servings_meat_eaten"</span>, <span class="st">"school_day"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the first row (old spreadsheet cloumn titles)</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the columns from text to numbers</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">number_eggs_eaten =</span> <span class="fu">as.numeric</span>(number_eggs_eaten),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">servings_yogurt_eaten =</span> <span class="fu">as.numeric</span>(servings_yogurt_eaten),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">servings_meat_eaten =</span> <span class="fu">as.numeric</span>(servings_meat_eaten))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>I created a linear model:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create new object to store linear model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formula: lm(dependent ~ independent, data = data frame)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>egg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(number_eggs_eaten <span class="sc">~</span> servings_meat_eaten,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> egg_data_clean)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># show summary of linear model</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(egg_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This was the output</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> number_eggs_eaten <span class="sc">~</span> servings_meat_eaten, <span class="at">data =</span> egg_data_clean)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Min <span class="dv">1</span>Q Median <span class="dv">3</span>Q Max</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">1.8382</span> <span class="sc">-</span><span class="fl">0.6900</span> <span class="fl">0.1618</span> <span class="fl">0.7359</span> <span class="fl">2.1618</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>(Intercept) <span class="fl">2.4123</span> <span class="fl">0.3072</span> <span class="fl">7.851</span> <span class="fl">1.26e-09</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>servings_meat_eaten <span class="sc">-</span><span class="fl">0.5741</span> <span class="fl">0.1689</span> <span class="sc">-</span><span class="fl">3.399</span> <span class="fl">0.00154</span> <span class="sc">**</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>Signif. codes<span class="sc">:</span> <span class="dv">0</span> <span class="st">'***'</span> <span class="fl">0.001</span> <span class="st">'**'</span> <span class="fl">0.01</span> <span class="st">'*'</span> <span class="fl">0.05</span> <span class="st">'.'</span> <span class="fl">0.1</span> <span class="st">' '</span> <span class="dv">1</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">1.047</span> on <span class="dv">40</span> degrees of freedom</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span> <span class="fl">0.2241</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span> <span class="fl">0.2047</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">11.55</span> on <span class="dv">1</span> and <span class="dv">40</span> DF, p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.001543</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="Screenshot 2026-06-04 153634.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Output"><img src="Screenshot 2026-06-04 153634.png" class="img-fluid figure-img" alt="Output"></a></p>
+<figcaption>Output</figcaption>
+</figure>
+</div>
 <p>And made a visualization:</p>
+<p>Here is what the plot looked like!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="Screenshot 2026-06-02 103544.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="&amp;nbsp"><img src="Screenshot 2026-06-02 103544.png" class="img-fluid figure-img" alt="&amp;nbsp"></a></p>
+<p><a href="Screenshot 2026-06-04 151433.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="&amp;nbsp"><img src="Screenshot 2026-06-04 151433.png" class="img-fluid figure-img" style="width:80.0%" alt="&amp;nbsp"></a></p>
 <figcaption>&amp;nbsp</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="Screenshot 2026-06-02 103556.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="&amp;nbsp"><img src="Screenshot 2026-06-02 103556.png" class="img-fluid figure-img" alt="&amp;nbsp"></a></p>
-<figcaption>&amp;nbsp</figcaption>
-</figure>
-</div>
-<p>Here is what the plot lookede like</p>
 
 
 

@@ -73,7 +73,10 @@ par(mfrow = c(2,2))
 # show diagnostic plots
 plot(egg_model)
 ```
-![Plot outputs](Screenshot 2026-06-04 154544.png)
+
+<div class="column-body-inset" style="max-width: 350px; text-align: left;">
+![Diagnostic Plots](Screenshot 2026-06-04 154544.png)
+</div>
 
 And made a visualization:
 
@@ -115,8 +118,9 @@ plot.subtitle = element_text(hjust = 0.5))
 
 Here is what the plot looked like!
 
-![&nbsp](Screenshot 2026-06-04 151433.png){width=80%}
-
+<div class="column-body-inset" style="max-width: 350px; text-align: left;">
+![](Screenshot 2026-06-04 151433.png)
+</div>
 
 
 

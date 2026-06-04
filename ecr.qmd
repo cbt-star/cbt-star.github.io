@@ -16,7 +16,7 @@ library(tidyverse)
 library(leaflet)
 
 # 1. Paste your published "Map Data" CSV link here
-sheet_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRQyyi-2Q3gxQikQDZqdzLAaamvRB4iILP3CLFdYiOIShpZ97p3eymEeTmxvs_XLqAXPff7Fj2lIoQ/pub?gid=1300473115&single=true&output=csv"
+sheet_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG_5a3WJNqPAIQH6pgM2gvhQOV3j-HwBnEAd3MaTGcgYcRzkRNsQg-GWwy224MF7WoA7pivAGbr1zG/pub?gid=1300473115&single=true&output=csv"
 ranch_data <- read_csv(sheet_url)
 
 # 2. Overwrite exact locations with a safe, public central coordinate
@@ -36,13 +36,15 @@ ranch_data <- ranch_data %>%
     "</div>"
   ))
 
-# 3. Build and center the map
+# 3. Build and center the map with marker clustering
 leaflet(data = ranch_data) %>%
-  addProviderTiles(providers$USGS.USImageryTopo) %>% # Satellite + Topo lines combo
+  addProviderTiles(providers$USGS.USImageryTopo) %>% 
   addMarkers(
     lng = ~lng, 
     lat = ~lat, 
     popup = ~popup_content, 
-    label = ~title
+    label = ~title,
+    # This line below fixes the stacking issue!
+    clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
   )
 ```

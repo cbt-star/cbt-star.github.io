@@ -1,6 +1,6 @@
 ---
 title: "Buckwheat Cover Crop"
-description: "first blog post"
+description: "I sewed buckwheat as a cover crop for the first time. Here's how it went"
 date: "2026-05-30"
 author:
   - name: Cassidy Thorpe

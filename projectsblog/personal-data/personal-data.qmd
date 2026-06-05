@@ -1,9 +1,16 @@
 ---
 title: "Eggs"
+description: "I collected data on the number of eggs I eat each dayto see if there were any trends"
 format: html
+date: "2026-05-30"
+author:
+  - name: Cassidy Thorpe
+image: "egg-viz-draft.png"
 ---
 
 Here is a sample of some code I wrote for a personal data project that I did. I collected data on the number of eggs I ate in a day along with data from other variables such as whether or not I had school and how many servings of meat I ate.
+
+My inspiration comes mainly from my excitement about raising chickens. I'm not sure if I should try raising chickens for eggs, meat, or both. This data collection was one way that I tracked my consumption of of chicken products. 
 
 First, my packages:
 
